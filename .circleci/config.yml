@@ -22,7 +22,7 @@ jobs:
                    mvn clean install
                    mvn --fail-never dependency:go-offline || true
       - run:
-          name: Install JFrog CLI
+          name: test
           command: |
               wget https://dl.bintray.com/jfrog/jfrog-cli-go/1.7.1/jfrog-cli-linux-amd64/jfrog
               chmod +x jfrog
