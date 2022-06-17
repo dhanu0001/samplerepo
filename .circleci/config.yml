@@ -15,14 +15,18 @@ jobs:
       - image: cimg/openjdk:11.0
     
       - checkout
+
+      - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
+          command: mvn clean package
       
       - run:
           name: Build
           command: |
                    mvn -B -DskipTests clean package
                    mvn clean install
-                   mvn --fail-never dependency:go-offline || true
-      #- run:
+
           name: test
           command: |
               wget https://dl.bintray.com/jfrog/jfrog-cli-go/1.7.1/jfrog-cli-linux-amd64/jfrog
@@ -39,4 +43,4 @@ workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - build
+      - build-and-test
