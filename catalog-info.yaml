@@ -1,14 +1,16 @@
+# Example catalog-info.yaml entity definition file
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: Devops
-  description: An example of a Backstage application.
-  # Example for optional annotations
-   annotations:
-     circleci.com/project-slug: github/dhanu0001/samplerepo
-     #datadoghq.com/dashboard-url: https://p.datadoghq.com/sb/6dd69ce8-06a0-11ed-ab53-da7ad0900002-9968fd472c11c9a48674258f2d69fd8f
-     #github.com/project-slug: dhanu0001/samplerepo
-     backstage.io/techdocs-ref: dir:.
+  name: backstage-circleci
+  description: |
+    Backstage is an open-source developer portal. An example deployment of a Backstage application. Trying for test purpose of backstage. #Test 
+  annotations:
+    # This also supports bitbucket/xxx/yyy
+    github.com/project-slug: dhanu0001/samplerepo
+    circleci.com/project-slug: github/dhanu0001/samplerepo
+    #jira/project-key: CXDO/boards/68
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:dhanu0001
